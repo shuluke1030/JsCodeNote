@@ -1,0 +1,17 @@
+console.log("a".charCodeAt(0))
+// 97
+//a~z的字母索引值（即字母對應的ASCII碼值）是從97到122。
+// 其中，97代表小寫字母a的ASCII碼值，122
+// 代表小寫字母z的ASCII碼值。可以使用JavaScript中的charCodeAt()方法來獲取字母的ASCII碼值，
+// 例如"a".charCodeAt(0)返回的是97。
+
+String.fromCharCode()
+// String.fromCharCode() 方法是JavaScript中的一個方法，它接受一個或多個Unicode編碼值作為參數，
+// 然後返回對應的字符。例如，String.fromCharCode(97)會返回字符'a'，因為97是字符'a'的Unicode編碼值。
+
+// 在生成a~z的字母陣列的例子中，我們使用了String.fromCharCode()方法來將數字索引值轉換為對應的字母。
+// 因為小寫字母a的Unicode編碼值是97，因此在這個例子中，我們將索引值加上97來獲得對應的字母的編碼值。
+// 例如，當索引值為0時，97+0=97，因此String.fromCharCode(97)返回字符'a'。
+// 當索引值為1時，97+1=98，因此String.fromCharCode(98)返回字符'b'，以此類推。
+
+// 總之，String.fromCharCode()方法是用來將Unicode編碼值轉換為對應的字符，可以用於將數字索引值轉換為字母。
