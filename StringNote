@@ -15,3 +15,8 @@ String.fromCharCode()
 // 當索引值為1時，97+1=98，因此String.fromCharCode(98)返回字符'b'，以此類推。
 
 // 總之，String.fromCharCode()方法是用來將Unicode編碼值轉換為對應的字符，可以用於將數字索引值轉換為字母。
+
+
+.toString() //數字轉字串
+parseInt(要轉為數字的字串,進位)//ex.10進位=10 // 字串轉數字
+
