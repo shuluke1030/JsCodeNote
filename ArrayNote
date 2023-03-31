@@ -1,7 +1,85 @@
-//除了上述將傳入的對象轉成陣列使用，
-// Array.from()可以利用箭頭函數產生一組陣列，
-// 第一個參數傳入一個object，內容包含長度length，{ length: 5}
-// 第二個參數利用箭頭函數表示執行map函數來產生陣列，(_, i)
-// 如果想要產生一組更迭器的數值，使用方式如下，來達到產生新陣列的目的。
+除了上述將傳入的對象轉成陣列使用，
+Array.from()可以利用箭頭函數產生一組陣列，
+第一個參數傳入一個object，內容包含長度length，{ length: 5}
+第二個參數利用箭頭函數表示執行map函數來產生陣列，(_, i)
+如果想要產生一組更迭器的數值，使用方式如下，來達到產生新陣列的目的。
 console.log(Array.from({ length: 5}, (_, i) => i))
-// [0,1,2,3,4]
+[0,1,2,3,4]
+
+===================================================================
+splice() 方法可以藉由刪除既有元素並／或加入新元素來改變一個陣列的內容。
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');
+// Inserts at index 1
+console.log(months);
+// Expected output: Array ["Jan", "Feb", "March", "April", "June"]
+
+months.splice(4, 1, 'May');
+// Replaces 1 element at index 4
+console.log(months);
+// Expected output: Array ["Jan", "Feb", "March", "April", "May"]
+
+=====================================================================
+indexOf() 方法會回傳給定元素於陣列中第一個被找到之索引，若不存在於陣列中則回傳 -1。
+
+const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
+
+console.log(beasts.indexOf('bison'));
+// Expected output: 1
+
+// Start from index 2
+console.log(beasts.indexOf('bison', 2));
+// Expected output: 4
+
+console.log(beasts.indexOf('giraffe'));
+// Expected output: -1
+
+========================================================================
+typeof __ 運算子會傳回一個字串值, 指出未經運算 (unevaluated) 的運算元所代表的型別。
+型別	            傳回
+Undefined	        "undefined"
+Null	            "object"
+Boolean	            "boolean"
+Number	            "number"
+String	            "string"
+主機端物件 (由 JS 執行環境提供)	視實作方式而異
+Function 物件 (實作 ECMA-262 所定義的 [[Call]])	"function"
+E4X XML 物件	    "xml"
+E4X XMLList 物件	"xml"
+所有其它物件	     "object"
+
+=============================================================================
+filter() 方法會建立一個經指定之函式運算後，由原陣列中通過該函式檢驗之元素所構成的新陣列。
+
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+const result = words.filter(word => word.length > 6);
+
+console.log(result);
+// Expected output: Array ["exuberant", "destruction", "present"]
+
+================================================================================
+slice() 方法會回傳一個新陣列物件，為原陣列選擇之 begin 至 end（不含 end）部分的淺拷貝（shallow copy）。
+而原本的陣列將不會被修改。
+arr.slice([begin[, end]])
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+console.log(animals.slice(2));
+; // Expected output: Array ["camel", "duck", "elephant"]
+
+console.log(animals.slice(2, 4));
+; // Expected output: Array ["camel", "duck"]
+
+console.log(animals.slice(1, 5));
+; // Expected output: Array ["bison", "camel", "duck", "elephant"]
+
+console.log(animals.slice(-2));
+; // Expected output: Array ["duck", "elephant"]
+
+console.log(animals.slice(2, -1));
+; // Expected output: Array ["camel", "duck"]
+
+console.log(animals.slice());
+; // Expected output: Array ["ant", "bison", "camel", "duck", "elephant"]
+
+====================================================================================

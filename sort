@@ -1,0 +1,8 @@
+由小到大排序
+let oddarray = [1, 11, 3, 5];
+
+oddarray.sort(function(a, b) {
+  return a - b;
+});
+
+console.log(oddarray); // [1, 3, 5, 11]
