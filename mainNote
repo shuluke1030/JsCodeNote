@@ -1,0 +1,13 @@
+for...of迴圈
+在某一題中，題目問:「到我給了一個function，必須計算裡面各別文字的數量，如果是空的回傳{}」。
+function count(string) {
+  if(string === ''){
+    return {}; //拿到空值，回傳{}
+  }
+  let counts = {} ;創建一個空物件 counts，用於儲存每個字符出現的次數
+  for (let char of string) {  ;使用 for...of 迴圈，將 str 中的每個字符遍歷一遍
+    counts[char] = (counts[char] || 0) + 1;// 如果字符 char 已經在 counts 中存在，則將其對應的值加一；否則，將其設置為 1。
+  }
+  return counts;
+}
+console.log(count("abc")); { a: 1, b: 1, c: 1 }
